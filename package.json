@@ -1,0 +1,36 @@
+{
+  "name": "ramka-front",
+  "version": "0.0.1",
+  "description": "Front-end for ramka project",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "next",
+    "build": "next build",
+    "start": "next start"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/qaraluch/ramka-front.git"
+  },
+  "author": "qaraluch",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/qaraluch/ramka-front/issues"
+  },
+  "homepage": "https://github.com/qaraluch/ramka-front#readme",
+  "devDependencies": {
+    "eslint": "^6.6.0",
+    "eslint-config-prettier": "^6.7.0",
+    "eslint-plugin-import": "^2.18.2",
+    "eslint-plugin-node": "^10.0.0",
+    "eslint-plugin-prettier": "^3.1.1",
+    "eslint-plugin-promise": "^4.2.1",
+    "prettier": "1.19.1"
+  },
+  "dependencies": {
+    "next": "^9.1.4",
+    "react": "^16.12.0",
+    "react-dom": "^16.12.0"
+  }
+}

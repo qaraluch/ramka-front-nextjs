@@ -1,0 +1,18 @@
+{
+    "env": {
+        "browser": true,
+        "commonjs": true,
+        "es6": true,
+	"node": true
+    },
+    "extends": ["eslint:recommended", "plugin:prettier/recommended"],
+    "parserOptions": {
+        "ecmaVersion": 2019
+    },
+    "rules": {
+	    "no-console": "warn",
+	    "no-unused-vars": "warn",
+	    "quotes": ["warn", "double"],
+	    "semi": ["error", "always"]
+  }
+}
