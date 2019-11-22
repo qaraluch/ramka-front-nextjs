@@ -1,4 +1,5 @@
 const PouchDB = require("pouchdb");
+const path = require("path");
 
 function initDB(name) {
   let db = new PouchDB(name);
@@ -15,6 +16,16 @@ async function pullAllRecords(dbName) {
   }
 }
 
+async function pullDataFromDB(dbServerPath) {
+  try {
+    const pathResolved = path.resolve(dbServerPath);
+    const result = await pullAllRecords(pathResolved);
+    return result;
+  } catch (error) {
+    console.error(error);
+  }
+}
+
 module.exports = {
-  pullAllRecords
+  pullDataFromDB
 };

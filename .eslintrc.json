@@ -1,18 +1,26 @@
 {
-    "env": {
-        "browser": true,
-        "commonjs": true,
-        "es6": true,
-	"node": true
-    },
-    "extends": ["eslint:recommended", "plugin:prettier/recommended"],
-    "parserOptions": {
-        "ecmaVersion": 2019
-    },
-    "rules": {
-	    "no-console": "warn",
-	    "no-unused-vars": "warn",
-	    "quotes": ["warn", "double"],
-	    "semi": ["error", "always"]
+  "env": {
+    "browser": true,
+    "commonjs": true,
+    "es6": true,
+    "node": true
+  },
+  "extends": [
+    "eslint:recommended",
+    "plugin:prettier/recommended",
+    "plugin:react/recommended"
+  ],
+  "parserOptions": {
+    "jsx": true,
+    "ecmaVersion": 2019,
+    "sourceType": "module"
+  },
+  "rules": {
+    "react/prop-types": "off",
+    "react/react-in-jsx-scope": "off",
+    "no-console": "warn",
+    "no-unused-vars": "warn",
+    "quotes": ["warn", "double"],
+    "semi": ["error", "always"]
   }
 }

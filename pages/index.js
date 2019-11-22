@@ -1,35 +1,29 @@
+import React from "react";
+import { ThemeProvider } from "@material-ui/core/styles";
+import CssBaseline from "@material-ui/core/CssBaseline";
+import Head from "next/head";
+import { pullDataFromDB } from "../src/db";
+import AppContainer from "../components/AppContainer";
+import theme from "../src/theme";
+//TODO: add all to tiljs
 //TODO: add to config
 // dev manual DB path
 const dbServerPath = "../manual/.DB-ramka-manual";
 
-async function pullDataFromDB(dbServerPath) {
-  try {
-    const path = require("path");
-    const { pullAllRecords } = require("../src/db");
-    const pathResolved = path.resolve(dbServerPath);
-    const result = await pullAllRecords(pathResolved);
-    return result;
-  } catch (error) {
-    console.log(error);
-  }
-}
-
 const Index = props => (
-  <div>
-    <h1>DB entries</h1>
-    <ul>
-      {props.db.map(itm => (
-        <li key={itm.id}>
-          <div>{itm.id}</div>
-        </li>
-      ))}
-    </ul>
-  </div>
+  <React.Fragment>
+    <Head>
+      <title>My page</title>
+    </Head>
+    <ThemeProvider theme={theme}>
+      <CssBaseline />
+      <AppContainer {...props} />
+    </ThemeProvider>
+  </React.Fragment>
 );
 
 Index.getInitialProps = async function({ req }) {
   if (req) {
-    //TODO: add to tiljs
     // Runs only in the server
     //TODO: to optimize modules in webpack boundle for only server side
     // see: [SSR and Server Only Modules](https://arunoda.me/blog/ssr-and-server-only-modules)
