@@ -1,31 +1,29 @@
 const PouchDB = require("pouchdb");
-const path = require("path");
+// const path = require("path");
 
 function initDB(name) {
   let db = new PouchDB(name);
   return db;
 }
 
-async function pullAllRecords(dbName) {
+async function pullDataDB(dbName, reducerFn) {
   let db = initDB(dbName);
-  try {
-    const allDocs = await db.allDocs({ include_docs: true });
-    return allDocs;
-  } catch (error) {
-    console.error(`db.js - pullAllRecords() - Sth. went wrong: ...\n ${error}`);
-  }
+  const allDocs = await db.allDocs({ include_docs: true });
+  const allDocsReduced = allDocs.rows.reduce(reducerFn, []);
+  return allDocsReduced;
 }
 
-async function pullDataFromDB(dbServerPath) {
+async function pullAllInfoDB(dbName) {
   try {
-    const pathResolved = path.resolve(dbServerPath);
-    const result = await pullAllRecords(pathResolved);
-    return result;
+    const allInfo = await pullDataDB(dbName, (acc, next) => [...acc, next.doc]);
+    return allInfo;
   } catch (error) {
-    console.error(error);
+    return new Error(
+      `db.js - pullAllInfoDB() - Sth. went wrong: ...\n ${error}`
+    );
   }
 }
 
 module.exports = {
-  pullDataFromDB
+  pullAllInfoDB,
 };
