@@ -20,21 +20,21 @@
   },
   "homepage": "https://github.com/qaraluch/ramka-front#readme",
   "devDependencies": {
-    "eslint": "^6.6.0",
-    "eslint-config-prettier": "^6.7.0",
-    "eslint-plugin-import": "^2.18.2",
-    "eslint-plugin-node": "^10.0.0",
-    "eslint-plugin-prettier": "^3.1.1",
+    "eslint": "^7.3.1",
+    "eslint-config-prettier": "^6.11.0",
+    "eslint-plugin-import": "^2.21.2",
+    "eslint-plugin-node": "^11.1.0",
+    "eslint-plugin-prettier": "^3.1.4",
     "eslint-plugin-promise": "^4.2.1",
-    "eslint-plugin-react": "^7.16.0",
-    "prettier": "1.19.1"
+    "eslint-plugin-react": "^7.20.0",
+    "prettier": "2.0.5"
   },
   "dependencies": {
-    "@material-ui/core": "^4.6.1",
-    "@material-ui/icons": "^4.5.1",
-    "next": "^9.3.2",
-    "pouchdb": "^7.1.1",
-    "react": "^16.12.0",
-    "react-dom": "^16.12.0"
+    "@material-ui/core": "^4.10.2",
+    "@material-ui/icons": "^4.9.1",
+    "next": "^9.4.4",
+    "pouchdb": "^7.2.1",
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1"
   }
 }
